@@ -89,7 +89,7 @@ func main() {
 	{
 		var wg sync.WaitGroup
 		wg.Add(cores)
-		var noks = make([]bool, cores)
+		var fails = make([]bool, cores)
 		start := time.Now()
 		for j := 0; j < cores; j++ {
 			go func(j int) {
@@ -97,7 +97,7 @@ func main() {
 				for k := 0; k < counts[j]; k++ {
 					_, ok, _ := store.Get(blocks[i].Hash[:])
 					if !ok {
-						noks[j] = true
+						fails[j] = true
 						break
 					}
 					i += cores
@@ -111,14 +111,14 @@ func main() {
 		// fmt.Println(d)
 		fmt.Printf("%s get rate: %d op/s, mean: %d ns, took: %d s, kv total: %d\n",
 			name, int64(n)*1e6/(d/1e3), d/int64(n), int(dur.Seconds()), n)
-		fmt.Println("failed goroutine: ", noks)
+		fmt.Println("failed goroutine: ", fails)
 	}
 
 	// test multiple get/one set
 	{
 		keys := genKey(dataLen)
 		var data = make([]byte, 512)
-		var noks = make([]bool, cores)
+		var fails = make([]bool, cores)
 
 		var wg sync.WaitGroup
 		wg.Add(cores)
@@ -148,7 +148,7 @@ func main() {
 				for k := 0; k < counts[j]; k++ {
 					_, ok, _ := store.Get(blocks[i].Hash[:])
 					if !ok {
-						noks[j] = true
+						fails[j] = true
 						break
 					}
 					i += cores
@@ -168,7 +168,7 @@ func main() {
 			fmt.Printf("%s setmixed rate: %d op/s, mean: %d ns, took: %d s\n", name, int64(setCount)*1e6/(d/1e3), d/int64(setCount), int(dur.Seconds()))
 		}
 		fmt.Printf("%s getmixed rate: %d op/s, mean: %d ns, took: %d s\n", name, int64(n)*1e6/(d/1e3), d/int64(n), int(dur.Seconds()))
-		fmt.Println("failed goroutine: ", noks)
+		fmt.Println("failed goroutine: ", fails)
 
 	}
 
