@@ -9,7 +9,7 @@ Features:
   - more than 480000 XDAG blocks
   - 32 bytes address as key and 512 bytes block as value
 - OS
-  - CentOS 7 86_x64
+  - CentOS 7 x86_64
   - ulimit -n 655360
 
 - KV Store  
