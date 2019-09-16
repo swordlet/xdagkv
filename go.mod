@@ -12,5 +12,3 @@ require (
 	github.com/tecbot/gorocksdb v0.0.0-20190705090504-162552197222
 	github.com/tidwall/match v1.0.1
 )
-
-replace example.com/xdagkv => d:\gophers\goworks\src\xdagkv
