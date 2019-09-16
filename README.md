@@ -77,6 +77,7 @@ Features:
 | get      | 2023    | 1487    | 618     | 7515    |
 | getmixed | 1973    | 1295    | 773     |         |
 | del      | 361281  | 337564  | 1586175 |         |
+
 ![snapshot of desktop #1 test](./desktop-1.jpg)
 
 ## desktop benchmark #2
@@ -102,4 +103,5 @@ Features:
 | get      | 4783    | 1398    | 565     | 7674    |
 | getmixed | 1946    | 1581    | 822     |         |
 | del      | 364299  | 331991  | 1610657 |         |
+
 ![snapshot of desktop #2 test](./desktop-2.jpg)
