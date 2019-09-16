@@ -1,0 +1,7 @@
+.vscode
+.idea
+storage/
+storage-testnet/
+vendor
+config.toml
+
