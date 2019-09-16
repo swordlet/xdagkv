@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"example.com/xdagkv/kv"
-	"example.com/xdagkv/xdag"
+	"github.com/swordlet/xdagkv/kv"
+	"github.com/swordlet/xdagkv/xdag"
 )
 
 var (
