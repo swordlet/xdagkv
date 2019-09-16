@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"log"
 
-	"example.com/xdagkv/util"
+	"github.com/swordlet/xdagkv/util"
 
 	"github.com/bmatsuo/lmdb-go/lmdb"
 	"github.com/bmatsuo/lmdb-go/lmdbscan"
